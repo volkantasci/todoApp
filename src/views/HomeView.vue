@@ -21,6 +21,14 @@
           </v-fade-transition>
         </template>
       </v-text-field>
+      <v-autocomplete
+          :items="categories"
+          item-text="name"
+          item-value="id"
+          dense
+          outlined
+          color="secondary"
+      />
       <div class="mt-8">
         <v-card
           hover
@@ -82,7 +90,8 @@ export default {
   computed: {
     ...mapGetters({
       nextId: 'getNexId',
-      todos: 'getTodos'
+      todos: 'getTodos',
+      categories: 'categories/getCategoryList'
     })
   },
 

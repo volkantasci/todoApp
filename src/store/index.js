@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+// Modules
+import categories from '@/store/categories/categories'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -20,12 +23,22 @@ export default new Vuex.Store({
         text: 'About',
         link: '/about',
         icon: 'mdi-information'
+      },
+      {
+        id: 3,
+        text: 'Categories',
+        link: '/categories',
+        icon: 'mdi-tag'
       }
     ]
   },
   getters: {
     getTodos (state) {
-      return state.todos
+      return state.todos.sort((a, b) => {
+        if (a.id > b.id) return -1
+        if (b.id > a.id) return 1
+        return 0
+      })
     },
 
     getNavlist (state) {
@@ -56,5 +69,7 @@ export default new Vuex.Store({
       context.commit('deleteTodo', payload)
     }
   },
-  modules: {}
+  modules: {
+    categories
+  }
 })
