@@ -1,42 +1,57 @@
 <template>
   <div class="mt-7">
     <v-container>
-      <v-row>
-        <v-col cols="9">
-          <v-text-field
-            label="Görev"
-            dense
-            v-model="todoText"
-          />
-        </v-col>
-        <v-col cols="3" class="text-right">
-          <v-btn
-            dark
-            class="orange white--text"
-            @click="addToList"
-          >
-            <v-icon dark>mdi-playlist-plus</v-icon>
-          </v-btn>
-        </v-col>
-      </v-row>
 
+      <v-text-field
+        label="Görev"
+        dense
+        v-model="todoText"
+        outlined
+        light
+        color="secondary"
+      >
+        <template v-slot:append>
+          <v-fade-transition>
+            <v-icon
+              v-if="todoText"
+              @click="addToList"
+            >
+              mdi-plus-circle
+            </v-icon>
+          </v-fade-transition>
+        </template>
+      </v-text-field>
       <div class="mt-8">
         <v-card
-          :hover="!todo.completed"
+          hover
           v-for="todo in todos"
           :key="todo.id" class="mb-2"
           shaped
-          color="orange lighten-5"
+          dark
+          color="secondary lighten-1"
         >
-          <v-card-text :class="classForTodoText(todo)" style="font-size: 105% !important;">{{ todo.content }}</v-card-text>
+          <v-card-text :class="classForTodoText(todo)" style="font-size: 105% !important;">{{
+              todo.content
+            }}
+          </v-card-text>
           <v-card-actions class="justify-end">
             <v-btn
               icon
+              v-if="!todo.completed"
               small
               color="green"
               @click="todo.completed = true"
             >
               <v-icon>mdi-check</v-icon>
+            </v-btn>
+            <v-btn
+              icon
+              v-if="todo.completed"
+              small
+              color="green"
+              @click="todo.completed = false"
+            >
+              <v-icon>mdi-backup-restore</v-icon>
             </v-btn>
             <v-btn
               icon

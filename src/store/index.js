@@ -6,11 +6,30 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     todos: [],
-    nextId: 1
+    side_navbar: false,
+    nextId: 1,
+    navlist: [
+      {
+        id: 1,
+        text: 'Home',
+        link: '/',
+        icon: 'mdi-view-dashboard'
+      },
+      {
+        id: 2,
+        text: 'About',
+        link: '/about',
+        icon: 'mdi-information'
+      }
+    ]
   },
   getters: {
     getTodos (state) {
       return state.todos
+    },
+
+    getNavlist (state) {
+      return state.navlist
     },
 
     getNexId (state) {
