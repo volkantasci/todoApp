@@ -2,7 +2,8 @@
   <div class="side-navbar">
     <v-navigation-drawer
       dark
-      absolute
+      app
+      temporary
       v-model="$store.state.side_navbar"
     >
       <div class="text-center mt-4">

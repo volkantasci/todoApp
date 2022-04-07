@@ -27,7 +27,5 @@ export default {
 }
 </script>
 <style>
-body {
-  max-width: 460px; margin: 0 auto 0 auto;
-}
+
 </style>

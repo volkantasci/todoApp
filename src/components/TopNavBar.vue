@@ -5,7 +5,6 @@
       dark
       elevation="5"
       app
-      style="max-width: 460px; margin: 0 auto 0 auto;"
     >
       <v-app-bar-nav-icon
         color="white"
