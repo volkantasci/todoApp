@@ -18,17 +18,18 @@ export default new Vuex.Store({
         link: '/',
         icon: 'mdi-view-dashboard'
       },
+
       {
         id: 2,
-        text: 'About',
-        link: '/about',
-        icon: 'mdi-information'
-      },
-      {
-        id: 3,
         text: 'Categories',
         link: '/categories',
         icon: 'mdi-tag'
+      },
+      {
+        id: 3,
+        text: 'About',
+        link: '/about',
+        icon: 'mdi-information'
       }
     ]
   },

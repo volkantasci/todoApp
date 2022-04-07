@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import HomeView from '@/views/HomeView'
 import AboutView from '@/views/AboutView'
 import CategoriesView from '@/views/CategoriesView'
+import DonateView from '@/views/DonateView'
+import StarsView from '@/views/StarsView'
 
 Vue.use(VueRouter)
 
@@ -21,6 +23,16 @@ const routes = [
     path: '/categories',
     name: 'Category',
     component: CategoriesView
+  },
+  {
+    path: '/donate',
+    name: 'Donate',
+    component: DonateView
+  },
+  {
+    path: '/stars',
+    name: 'Stars',
+    component: StarsView
   }
 
 ]
