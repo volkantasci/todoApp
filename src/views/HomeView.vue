@@ -54,8 +54,8 @@
           v-for="todo in todos"
           :key="todo.id" class="mb-2 mt-5"
           shaped
-          dark
-          color="secondary lighten-1"
+          light
+          elevation="5"
         >
           <v-card-title class="subtitle-1 orange--text" :class="classForTodoText(todo)">
             <span>{{ todo.title }}</span>
@@ -95,6 +95,7 @@
             </v-btn>
           </v-card-actions>
         </v-card>
+        <div style="height: 60px"></div>
       </div>
 
     </v-container>
@@ -147,7 +148,9 @@ export default {
             completed: false
           }
         })
-        this.todoText = ''
+        this.todoTitle = ''
+        this.todoContent = ''
+        this.todoCategory = null
       }
     }
   }
